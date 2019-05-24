@@ -97,7 +97,8 @@ theme: hexo-theme-next
 # 部署到服务器
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: 
+  type: git
+  repo: root@strugglexiang.xyz:/var/repo/hexo_static.git
 
 
 # 字数统计
@@ -111,7 +112,8 @@ deploy:
 # 看板娘
 live2d:
   enable: true
-  scriptFrom: local
+  # scriptFrom: local
+  scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
   pluginRootPath: live2dw/
   pluginJsPath: lib/
   pluginModelPath: assets/
@@ -124,7 +126,7 @@ live2d:
     width: 150
     height: 200
   mobile:
-    show: true
+    show: false
   react:
     # opacity: 0.7
 

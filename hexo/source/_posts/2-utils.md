@@ -65,9 +65,9 @@ function getPosition(e) {
 }
 
 ```
-::: tip 注意
+> 注意
 使用`offsetLeft`、`offsetTop`不能检测到css中`transform`的偏移
-:::
+>
 
 
 ## 元素出现在视口内

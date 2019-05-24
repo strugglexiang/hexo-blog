@@ -1,11 +1,10 @@
 ---
 title: 工具函数
 categories: 
-    - 前端
-    - utils
+    - JavaScript
+    - 混杂
 tags: 
     - utils
-    - JavaScript
 ---
 
 

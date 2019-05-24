@@ -94,12 +94,25 @@ search:
 theme: hexo-theme-next
 
 # Deployment
+# 部署到服务器
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  message: update
+  repo: root@118.24.108.248:/home/hexo_p,master
+
+#!/bin/bash -l
+# git会先将文件拉到临时目录，然后再将所有文件拷贝到博客网站目录。
+# GIT_REPO=/home/hexo_p #仓库目录
+# TMP_GIT_CLONE=/home/blogtemp/ #临时目录
+# PUBLIC_WWW= /home/wwwroot/default/ # 博客网站目录
+# rm -rf ${TMP_GIT_CLONE}
+# git clone $GIT_REPO $TMP_GIT_CLONE
+# rm -rf ${PUBLIC_WWW}/*
+# cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}
 
 
-
+# 字数统计
 # symbols_count_time:
 #   symbols: true
 #   time: true
@@ -126,6 +139,7 @@ live2d:
     show: true
   react:
     # opacity: 0.7
+
 
 
 

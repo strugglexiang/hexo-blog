@@ -2,6 +2,7 @@
 title: 关于
 date: 2019-05-23 15:43:54
 comments: false
+type: 'users'
 ---
 
 

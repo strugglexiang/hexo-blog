@@ -581,10 +581,11 @@ bookmark:
   save: auto
 
 # Reading progress bar
+# 启用阅读进度条
 # Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
   enable: false
-  color: "#37c6c0"
+  color: "#222"
   height: 2px
 
 # Google Calendar
@@ -991,8 +992,9 @@ fastclick: false
 lazyload: false
 
 # Progress bar in the top during page loading.
+# 顶部加载进度条
 # Dependencies: https://github.com/theme-next/theme-next-pace
-pace: false
+pace: true
 # Themes list:
 # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
 # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
@@ -1088,9 +1090,9 @@ vendors:
   # Internal version: 4.6.2
   # See: https://fontawesome.com
   # Example:
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+  fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
   # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
-  fontawesome:
+  # fontawesome:
 
   # Internal version: 2.10.4
   # See: https://www.algolia.com
@@ -1170,11 +1172,13 @@ vendors:
   # bookmark: //cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js
   bookmark:
 
+
   # Internal version: 1.1
+  # 阅读进度条 CDN加速
   # See: https://github.com/theme-next/theme-next-reading-progress
   # Example:
   # reading_progress: //cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js
-  reading_progress:
+  # reading_progress:
 
   # leancloud-storage
   # See: https://www.npmjs.com/package/leancloud-storage

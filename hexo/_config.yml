@@ -50,7 +50,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 7
   order_by: -date
   
 # Category & Tag
@@ -97,19 +97,7 @@ theme: hexo-theme-next
 # 部署到服务器
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  message: update
-  repo: root@118.24.108.248:/home/hexo_p,master
-
-#!/bin/bash -l
-# git会先将文件拉到临时目录，然后再将所有文件拷贝到博客网站目录。
-# GIT_REPO=/home/hexo_p #仓库目录
-# TMP_GIT_CLONE=/home/blogtemp/ #临时目录
-# PUBLIC_WWW= /home/wwwroot/default/ # 博客网站目录
-# rm -rf ${TMP_GIT_CLONE}
-# git clone $GIT_REPO $TMP_GIT_CLONE
-# rm -rf ${PUBLIC_WWW}/*
-# cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}
+  type: 
 
 
 # 字数统计
@@ -139,11 +127,6 @@ live2d:
     show: true
   react:
     # opacity: 0.7
-
-
-
-
-
 
 
 

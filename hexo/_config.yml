@@ -126,7 +126,7 @@ live2d:
     width: 150
     height: 200
   mobile:
-    show: false
+    show: true
   react:
     # opacity: 0.7
 

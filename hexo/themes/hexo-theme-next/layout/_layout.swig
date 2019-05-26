@@ -123,5 +123,6 @@
   {% include '_third-party/chatra.swig' %}
   {% include '_third-party/tidio.swig' %}
   <script type="text/javascript" src="/js/struggle/love.js"></script>
+  <script type="text/javascript" src="/js/struggle/crash_cheat.js"></script>
 </body>
 </html>

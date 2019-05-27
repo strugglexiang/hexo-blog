@@ -12,6 +12,12 @@ type: 'users'
 ## 关于本站
 本站搭建于2019年5月，主要用于记录我的一些想法和心得。
 
+## 我在业务时间忙什么
+除了工作，我的精力主要集中在以下内容       
+[自写文档](https://doc.strugglexiang.xyz)    
+[效果手机](http://effects.strugglexiang.xyz)     
+
+
 ## 联系方式
 QQ:
 576430815@qq.com  

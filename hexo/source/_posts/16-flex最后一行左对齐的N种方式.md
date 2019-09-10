@@ -49,7 +49,7 @@ html代码
 ```
 
 结果如下图：  
-![问题点](http://source.strugglexiang.top/1565938865.jpg)
+![问题点](http://source.strugglexiang.xyz/1565938865.jpg)
 
 
 以下是**flex最后一行左对齐**的几种解决方案：

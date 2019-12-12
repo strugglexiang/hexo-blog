@@ -96,10 +96,12 @@ theme: hexo-theme-next
 # Deployment
 # 部署到服务器
 ## Docs: https://hexo.io/docs/deployment.html
+## 参考: https://www.jianshu.com/p/70bf58c48010
+## 勾子运行失败 https://blog.csdn.net/gsl9d1p04f6x2ts3c9/article/details/81024330
 deploy:
   type: git
-  repo: root@strugglexiang.xyz:/var/repo/hexo_static.git
-
+  repo: root@strugglexiang.xyz:/var/repo/blog.git
+  branch: master
 
 # 字数统计
 # symbols_count_time:

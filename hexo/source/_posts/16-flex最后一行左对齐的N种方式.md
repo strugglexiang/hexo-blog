@@ -1,7 +1,7 @@
 ---
 title: flex最后一行左对齐的N种方式
 date: 2019-08-16 17:03:01
-categories: css
+categories: CSS
 tags:
 ---
 

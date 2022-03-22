@@ -645,7 +645,7 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
   appid:  mt3ESBgxyC3E2naCDTcLXqhh-gzGzoHsz # your leancloud application appid
   appkey: iL74QVzkHeoeyMOTPTnA2dIT # your leancloud application appkey
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
@@ -817,7 +817,7 @@ rating:
 # 文章添加阅读次数
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: mt3ESBgxyC3E2naCDTcLXqhh-gzGzoHsz
   app_key: iL74QVzkHeoeyMOTPTnA2dIT
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security

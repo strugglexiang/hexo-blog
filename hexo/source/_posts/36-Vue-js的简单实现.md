@@ -1,13 +1,13 @@
 ---
-title: Vue.js的简单实现.md
-date: 2022-04-09 16:45:38
+title: Vue.js的简单实现
+date: 2022-01-09 16:45:38
 categories: JavaScript
 tags:
 ---
 
-在Vue.js的2.x版本中，响应式原理的核心是数据劫持和依赖收集，通过`Object.defineProperties`方法实现对数据存取的拦截，这一步的实现我们称之为数据代理；同时，通过对get方法进行拦截，可以获取到数据的依赖，并将依赖收集到一个集合中，当数据发生变更时，收集到的依赖将对视图进行更新。
+在Vue.js的2.x版本中，响应式原理的核心是数据劫持和依赖收集，通过`Object.defineProperty`方法实现对数据存取的拦截，这一步的实现我们称之为数据代理；同时，通过对get方法进行拦截，可以获取到数据的依赖，并将依赖收集到一个集合中，当数据发生变更时，收集到的依赖将对视图进行更新。
 
-Vue.js的3.0版本，响应式原理的核心思想不变，将用`Proxy`替换`Object.defineProperties`实现数据代理。
+Vue.js的3.0版本，响应式原理的核心思想不变，将用`Proxy`替换`Object.defineProperty`实现数据代理。
 
 本篇基于Vue 2.x的核心思想来实现一个简化版的Vue.js。
 
@@ -30,7 +30,7 @@ class Vue {
 上面的代码中我们构建了一个Vue类，代码很容易理解，构造函数和我们平时使用Vue的方式保持一致，`Observe`类将其中传入的`option.data`需要进行响应式处理。
 
 # Observe类
-在Observe类中，通过`Object.defineProperties`方法实现对传入数据的拦截
+在Observe类中，通过`Object.defineProperty`方法实现对传入数据的拦截
 ```js
 class Observe {
     constructor(objData) {
@@ -55,23 +55,21 @@ class Observe {
         
         let keyValue = objData[key];
         let dep = new Dep(); // 本属性的依赖集合 get方法触发时进行收集
-        Object.defineProperties(objData, {
-            [key]: {
-                enumerable: true,
-                configurable: true,
-                get() {
-                    if(Dep.target) {
-                        dep.addSub(Dep.target);
-                    }
-
-                    return keyValue;                        
-                },
-                set(newVal) {
-                    // set方法执行 本属性的依赖对数据的变更进行响应
-                    dep.nofity(newVal);
-
-                    keyValue = newVal;
+        Object.defineProperty(objData, key, {
+            enumerable: true,
+            configurable: true,
+            get() {
+                if(Dep.target) {
+                    dep.addSub(Dep.target);
                 }
+
+                return keyValue;                        
+            },
+            set(newVal) {
+                // set方法执行 本属性的依赖对数据的变更进行响应
+                dep.nofity(newVal);
+
+                keyValue = newVal;
             }
         })
     }
@@ -193,7 +191,7 @@ new watcher(app, 'name', (newVal) => {
 很容易想到，我们可以利用eventloop实现**异步更新**，因为每次事件循环之间都有视图渲染，我们可以把dom的更新操作统一放在每次视图更新前，这样就有了一个统一的视图更新的时间点。同时，为了避免无效的dom操作，还需要将数据的变化缓存起来，只保留最后一次数据变更的结果。
 
 
-为了实现异步更新，首先需要更改watcher的update方法，在update方法种不能直接进行视图更新，而是把数据变化后的watcher放入一个更新队列中，本地时间循环结束时将更新队列中的watcher出队并执行更新。
+为了实现异步更新，首先需要更改watcher的update方法，在update方法种不能直接进行视图更新，而是把数据变化后的watcher放入一个更新队列中，本地事件循环结束时将更新队列中的watcher出队并执行更新。
 ```js
 class watcher {
     update(newVal) {
@@ -439,23 +437,21 @@ class Observe {
         
         let keyValue = objData[key];
         let dep = new Dep(); // 本属性的依赖集合 get方法触发时进行收集
-        Object.defineProperties(objData, {
-            [key]: {
-                enumerable: true,
-                configurable: true,
-                get() {
-                    if(Dep.target) {
-                        dep.addSub(Dep.target);
-                    }
-
-                    return keyValue;                        
-                },
-                set(newVal) {
-                    // set方法执行 本属性的依赖对数据的变更进行响应
-                    dep.nofity(newVal);
-
-                    keyValue = newVal;
+        Object.defineProperty(objData, key, {
+            enumerable: true,
+            configurable: true,
+            get() {
+                if(Dep.target) {
+                    dep.addSub(Dep.target);
                 }
+
+                return keyValue;                        
+            },
+            set(newVal) {
+                // set方法执行 本属性的依赖对数据的变更进行响应
+                dep.nofity(newVal);
+
+                keyValue = newVal;
             }
         })
     }

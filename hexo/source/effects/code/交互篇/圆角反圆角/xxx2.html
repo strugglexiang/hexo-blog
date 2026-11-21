@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-list {
+            display: flex;
+            position: relative;
+            z-index: 2;
+            border-radius: 12px 12px 0 0;
+            background-color: #e2e8f8;
+            overflow: hidden;
+            border: 1px solid #ddd;
+
+        }
+
+        .tab-item {
+            flex: 1;
+            height: 52px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            color: red;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .tab-icon {
+            width: 17px;
+            height: 17px;
+            margin-right: 4px;
+            margin-top: 1px;
+        }
+
+        .tab-selected {
+            opacity: 1;
+            background: #ffffff;
+            border-radius: 12px 12px 0 0;
+
+            /* box-shadow: 24px 40px 0 blue, -24px 40px 0 0 blue; */
+            box-shadow: 24px 40px 0 #ffffff, -24px 40px 0 0 #ffffff;
+
+        }
+
+        .tab-selected::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            bottom: 0;
+            width: 12px;
+            height: 52px;
+            border-top-left-radius: 12px;
+            transform: skewX(-15deg);
+
+            background-color: red;
+            background-color: #ffffff;
+
+
+        }
+
+        .tab-selected::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            bottom: 0;
+            width: 12px;
+            height: 52px;
+            border-top-right-radius: 12px;
+            transform: skewX(15deg);
+
+            background-color: red;
+            background-color: #ffffff;
+
+
+        }
+
+        .not-selected::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            bottom: 0;
+            width: 12px;
+            height: 52px;
+
+            border-bottom-left-radius: 12px;
+            transform: skewX(15deg);
+            background-color: yellow;
+            background: #e2e8f8;
+        }
+
+        .not-selected::after {
+            content: '';
+            position: absolute;
+            right: 6px;
+            bottom: 0;
+            width: 12px;
+            height: 52px;
+
+            border-bottom-right-radius: 12px;
+            transform: skewX(-15deg);
+            z-index: 1;
+            background-color: yellow;
+            background: #e2e8f8;
+        }
+        /* 防止文字靠近边缘时被遮挡 */
+        .content {
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-list">
+        <div class="tab-item  not-selected"><div class="content">tab页1</div></div>
+        <div class="tab-item tab-selected"><div class="content">tab页2</div></div>
+        <div class="tab-item not-selected"><div class="content">tab页3</div></div>
+    </div>
+    <script>
+        // 纯 JS 切换，只修改类名，不加 transition
+        const tabs = document.querySelectorAll('.tab-item');
+        const panels = document.querySelectorAll('.content-panel');
+
+        function switchTab(selectedTab) {
+            // 获取对应的内容面板 id
+            const tabId = selectedTab.getAttribute('data-tab');
+
+            // 切换标签的类：移除所有 tab-selected，添加 not-selected；再将当前标签加上 tab-selected，移除 not-selected
+            tabs.forEach(tab => {
+                tab.classList.remove('tab-selected');
+                tab.classList.add('not-selected');
+            });
+            selectedTab.classList.remove('not-selected');
+            selectedTab.classList.add('tab-selected');
+
+            // 切换内容面板
+            panels.forEach(panel => {
+                panel.style.display = 'none';
+            });
+            const activePanel = document.getElementById(`tab${tabId}`);
+            if (activePanel) activePanel.style.display = 'block';
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                switchTab(this);
+            });
+        });
+    </script>
+</body>
+
+</html>

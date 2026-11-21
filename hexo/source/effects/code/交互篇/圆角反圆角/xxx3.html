@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .tab-list {
+      --tab-height: 52px;
+      --tab-border-radius: 12px;
+      --skew-angle: 15deg;
+      --shadow-offset-x: calc(var(--tab-border-radius) * 2);
+      --shadow-offset-y: calc(var(--tab-height) - var(--tab-border-radius));
+
+      display: flex;
+      position: relative;
+      z-index: 2;
+      border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+      background-color: #e2e8f8;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    .tab-item {
+      flex: 1;
+      height: var(--tab-height);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      color: red;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .tab-icon {
+      width: 17px;
+      height: 17px;
+      margin-right: 4px;
+      margin-top: 1px;
+    }
+
+    .tab-selected {
+      opacity: 1;
+      background: #ffffff;
+      border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+
+      /* 反圆角核心：左右两个白色阴影，覆盖相邻tab的圆角区域 */
+      /*
+        调试技巧：把 #ffffff 换成 blue / red 可以看到阴影的实际覆盖范围
+        box-shadow: var(--shadow-offset-x) var(--shadow-offset-y) 0 blue,
+                    calc(-1 * var(--shadow-offset-x)) var(--shadow-offset-y) 0 0 red;
+      */
+      box-shadow: var(--shadow-offset-x) var(--shadow-offset-y) 0 #ffffff,
+                  calc(-1 * var(--shadow-offset-x)) var(--shadow-offset-y) 0 0 #ffffff;
+    }
+
+    .tab-selected::before {
+      content: '';
+      position: absolute;
+      left: calc(var(--tab-border-radius) / -2);
+      bottom: 0;
+      width: var(--tab-border-radius);
+      height: var(--tab-height);
+      border-top-left-radius: var(--tab-border-radius);
+      transform: skewX(calc(var(--skew-angle) * -1));
+      background-color: #ffffff;
+    }
+
+    .tab-selected::after {
+      content: '';
+      position: absolute;
+      right: calc(var(--tab-border-radius) / -2);
+      bottom: 0;
+      width: var(--tab-border-radius);
+      height: var(--tab-height);
+      border-top-right-radius: var(--tab-border-radius);
+      transform: skewX(var(--skew-angle));
+      background-color: #ffffff;
+    }
+
+    .not-selected::before {
+      content: '';
+      position: absolute;
+      left: calc(var(--tab-border-radius) / 2);
+      bottom: 0;
+      width: var(--tab-border-radius);
+      height: var(--tab-height);
+      border-bottom-left-radius: var(--tab-border-radius);
+      transform: skewX(var(--skew-angle));
+      background: #e2e8f8;
+    }
+
+    .not-selected::after {
+      content: '';
+      position: absolute;
+      right: calc(var(--tab-border-radius) / 2);
+      bottom: 0;
+      width: var(--tab-border-radius);
+      height: var(--tab-height);
+      border-bottom-right-radius: var(--tab-border-radius);
+      transform: skewX(calc(var(--skew-angle) * -1));
+      z-index: 1;
+      background: #e2e8f8;
+    }
+
+    .content {
+      z-index: 3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tab-list">
+    <div class="tab-item  not-selected">
+      <div class="content">tab页1</div>
+    </div>
+    <div class="tab-item tab-selected">
+      <div class="content">tab页2</div>
+    </div>
+    <div class="tab-item not-selected">
+      <div class="content">tab页3</div>
+    </div>
+  </div>
+  <script>
+    const tabs = document.querySelectorAll('.tab-item');
+    const panels = document.querySelectorAll('.content-panel');
+
+    function switchTab(selectedTab) {
+      const tabId = selectedTab.getAttribute('data-tab');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('tab-selected');
+        tab.classList.add('not-selected');
+      });
+      selectedTab.classList.remove('not-selected');
+      selectedTab.classList.add('tab-selected');
+
+      panels.forEach(panel => {
+        panel.style.display = 'none';
+      });
+      const activePanel = document.getElementById('tab' + tabId);
+      if (activePanel) activePanel.style.display = 'block';
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        switchTab(this);
+      });
+    });
+  </script>
+</body>
+
+</html>

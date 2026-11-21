@@ -164,6 +164,7 @@ site_state: true
 social:
   GitHub: https://github.com/strugglexiang || fab fa-github
   掘金: https://juejin.im/user/5a45b66f6fb9a044ff31c7d4 || fa fa-book
+  RSS: /atom.xml || fa fa-rss
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -185,7 +186,14 @@ links_settings:
   layout: block
 
 links:
-  #Title: https://example.com
+  V2EX: https://www.v2ex.com/
+  色彩搭配: https://flatuicolors.com/
+  随机文字: https://cn.lipsum.com/
+  阮一峰的网络日志: http://www.ruanyifeng.com/blog/
+  voidking: https://www.voidking.com/
+  深红结界: http://anata.me/
+  ssshooter: http://ssshooter.com/
+  心谭博客: https://xin-tan.com/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).

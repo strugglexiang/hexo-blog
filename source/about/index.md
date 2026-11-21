@@ -7,15 +7,14 @@ type: 'users'
 
 
 ## 关于我
-我叫向维星，95年出生，现在的职业是前端工程师。
+我叫向维星，现在的职业是前端工程师。
 
 ## 关于本站
 本站搭建于2019年5月，主要用于记录我的一些想法和心得。
 
 ## 我的时间
 除了工作，我的精力主要集中在以下内容       
-[自写文档](https://github.com/strugglexiang/docs)    
-[效果收集](/effects/)     
+[自写文档](https://github.com/strugglexiang/docs)
 
 
 ## 联系方式

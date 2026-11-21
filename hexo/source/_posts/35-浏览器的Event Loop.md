@@ -34,7 +34,7 @@ function bar() {
 }
 console.log(bar())
 ```
-![](https://source.strugglexiang.xyz/20_5_18_1.png)
+![](/images/20_5_18_1.png)
 
 * 浏览器再开始执行全局代码之前，先执行main函数，创建全局执行上下文，将全局执行上下文压入栈的顶部。
 * 每当进入一个函数的执行，就会创建该函数的执行上下文，将其压入栈的顶部。函数执行完后，当前函数的执行上下文就会出栈，等待垃圾回收。
@@ -103,7 +103,7 @@ while(task queue不为空) {
 # 图解Event Loop及代码分析
 以图解的形式介绍Event Loop会更加直观明了，再加上代码分析，大概就差不多掌握了Event Loop中的大部分细节。 
 
-![](https://source.strugglexiang.xyz/20_5_18_2.jpg)
+![](/images/20_5_18_2.jpg)
 
 有如下代码，你能正确分析打印过程吗？
 ```js

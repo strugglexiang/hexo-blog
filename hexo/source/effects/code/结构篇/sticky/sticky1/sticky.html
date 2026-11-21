@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sticky</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="something">
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>I wish I have a kean mind </p>
+        <p>1</p>
+    </div>
+    <div class="sticky-wrap">
+        <div class="sticky-container" >
+            sticky
+        </div>
+    </div>
+    <div>
+        <p>2</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+        <p>placeholder</p>
+    </div>
+    <script>
+        //-------------------- utils
+        function throttle(func, delay) {
+            return function() {
+                var flag = true
+                var arg = arguments
+                var self = this
+                if(!func || !flag) {
+                    return
+                }
+                flag = false
+                delay = delay || 50
+                
+                timer = setTimeout(function() {
+                    func.apply(self, arg)
+                    flag = true
+                }, delay)
+
+            }
+
+        }
+
+        function sticky() {
+            if(container.classList.contains('active')) {
+                return
+            }
+            var client = wrap.getBoundingClientRect()
+            container.style.width = client.width + 'px'
+            container.classList.add('active')
+        }
+
+
+
+        function reset() {
+            if(!container.classList.contains('active')) {
+                return
+            }
+            container.classList.remove('active')
+        }
+
+        
+        
+        //------------------- ele
+        var wrap = document.querySelector('.sticky-wrap')
+        var container = document.querySelector('.sticky-container')
+        document.addEventListener('scroll',function() {
+            var top = wrap.getBoundingClientRect().top
+            if(top < 0) {
+                sticky()
+            } else {
+                reset()
+            }
+        })
+        window.addEventListener('resize', function() {
+            var client = wrap.getBoundingClientRect()
+            if(client.top < 0) { 
+                container.style.width = client.width + 'px'
+            } else {
+                container.style.width = 'auto'
+            }
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

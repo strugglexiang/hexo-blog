@@ -1,0 +1,75 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* ----------------------------------- 容器线 --------------------------- */
+.container {
+    margin: 0 auto;
+    min-width: 1230px;
+    max-width: 1358px;
+}
+
+/* ------------------------------ */
+.nav {
+    height: 80px;
+    background: black;    
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-big-menu {
+    height: 250px;
+    background-size: hover;
+    background-image: url(../../../assets/images/bg.jpg)
+}
+
+.nav-big-menu-listbox {
+    height: 200px;
+    display: none;
+    overflow: hidden;
+    background: url(../../../assets/images/hober-bg-repeat.png) repeat;
+}
+
+.nav-big-menu-listbox a {
+    color: #fff;
+}
+
+
+/* ---------------------- 大蒙层 ----------------------- */
+.nav-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.nav-menu-part1, .nav-menu-part2{
+    padding: 0px 25px;
+    cursor: pointer;
+    line-height: 80px;
+    color: #fff;
+}
+
+
+
+
+
+
+

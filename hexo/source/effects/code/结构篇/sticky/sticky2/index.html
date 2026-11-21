@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>sticky effect</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <img src="./huaji.jpg" alt="">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <article>
+            This is a conversation.
+        </article>
+    </section>
+    <script>
+        (function() {
+            var nav = document.querySelector('nav')
+            document.addEventListener('scroll', function(event) {
+                var top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if(top > 90) {
+                    nav.classList.add('head-small')
+                } else {
+                    nav.classList.remove('head-small')
+                }
+            })
+        })()
+    </script>
+</body>
+</html>

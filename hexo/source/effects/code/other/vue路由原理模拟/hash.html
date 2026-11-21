@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟vue路由</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .row {
+            width: 1000px;
+            margin: 20px auto;
+        }
+
+        .show {
+            width: 1000px;
+            margin: auto;
+            min-height: 100px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <p><a href="#foo">foo</a></p>
+        <p><a href="#bar">bar</a></p>
+    </div>
+    <div class="show"></div>
+    <script>
+        class Router {
+            constructor() {
+                this.routes = {}
+                this.currentUrl = ''
+                this.refresh = this.refresh.bind(this)
+                window.addEventListener('load', this.refresh, false)
+                window.addEventListener('hashchange', this.refresh, false)
+            }
+            refresh() {
+                this.currentUrl = location.hash.slice(1) || '/'
+                this.routes[this.currentUrl] && this.routes[this.currentUrl]()
+            }
+            route(path, cb) {
+                this.routes[path] = cb || function () { }
+            }
+        }
+
+        const showContent = function () {
+            const dom = document.querySelector('.show')
+            dom.innerHTML = location.hash.slice(1)
+        }
+
+        const router = new Router()
+        router.route('foo', showContent)
+        router.route('bar', showContent)
+    </script>
+</body>
+
+</html>

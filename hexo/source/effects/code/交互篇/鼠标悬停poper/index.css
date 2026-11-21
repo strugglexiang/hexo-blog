@@ -1,0 +1,289 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 1200px;
+    margin: 200px auto 0px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left,.right, .top,.bottom {
+    width:80px; 
+    height: 80px; 
+    line-height: 80px;
+    text-align: center;
+}
+
+
+.my-cont1 {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+}
+
+.my-cont2 {
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+}
+
+.my-cont3 {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+}
+
+.my-cont4 {
+    width: 350px;
+    height: 350px;
+    line-height: 350px;
+    border: 1px solid #dcdcdc;
+    /* box-sizing: border-box; */
+}
+
+
+/* ---------------------------------------------- */
+.refrence {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+}
+
+.refrence .hover-cont {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    z-index: 100;
+    border-radius: 4px;
+    transition: all .3s;
+}
+
+.refrence .triangle {
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    background: transparent;
+}
+
+.refrence.top .hover-cont::before,
+.refrence.top .hover-cont::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border-right: 8px dashed transparent;
+    border-left: 8px dashed transparent;
+    border-bottom: 0;
+    left: 50%;
+    margin-left: -8px;   
+}
+
+/* --------- top ------- */
+.refrence.top  .hover-cont {
+    left: 50%;
+    top: -16px;
+    transform: translate(-50%, -100%) scale(0);
+    transform-origin: 50% 100%;
+}
+
+.refrence.top .triangle {
+    top: -16px;
+}
+
+.refrence.top .hover-cont:before {
+    border-top: 8px solid #dcdcdc; 
+    bottom: -8px;
+}
+
+.refrence.top .hover-cont::after {
+    border-top: 8px solid #fff; 
+    bottom: -7px;
+}
+
+/* --------- bottom ------- */
+.refrence.bottom .hover-cont {
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transform-origin: 50% 0%;
+    top: 100%;
+    margin-top: 16px;
+}
+.refrence.bottom .triangle {
+    bottom: -16px;
+}
+
+.refrence.bottom  .hover-cont::before,
+.refrence.bottom  .hover-cont::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border-right: 8px dashed transparent;
+    border-left: 8px dashed transparent;
+    border-bottom: 0;
+    left: 50%;
+    margin-left: -8px;   
+}
+
+
+.refrence.bottom .hover-cont:before {
+    border-bottom: 8px solid #dcdcdc; 
+    top: -8px;
+}
+
+.refrence.bottom .hover-cont:after {
+    border-bottom: 8px solid #fff; 
+    top: -7px;
+}
+
+/* --------- left ------- */
+.refrence.left  .hover-cont{
+    transform: translate(-100%, -50%) scale(0);
+    transform-origin: 100% 50%;
+    margin-left: -16px;
+    top: 50%;
+    left: 0px;
+}
+
+.refrence.left .triangle {
+    width: 16px;
+    height: 100%;
+    left: -16px;
+    bottom: 0px;
+    margin-top: -100%;
+}
+
+.refrence.left  .hover-cont::before,
+.refrence.left  .hover-cont::after  {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border-top: 8px dashed transparent;
+    border-bottom: 8px dashed transparent;
+    border-right: 0;
+    right: 0px;
+    margin-right: -8px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.refrence.left  .hover-cont:before {
+    border-left: 8px solid #dcdcdc; 
+}
+
+.refrence.left  .hover-cont:after {
+    border-left: 8px solid #fff;  
+    margin-right: -7px;
+}
+
+
+/* --------- right ------- */
+.refrence.right  .hover-cont{
+    transform: translate(100%, -50%) scale(0);
+    transform-origin: 0% 50%;
+    top: 50%;
+    right: 0px;
+    margin-right: -16px;
+}
+
+.refrence.right .triangle {
+    width: 16px;
+    height: 100%;
+    right: -16px;
+    bottom: 0px;
+    margin-top: -100%;
+}
+
+.refrence.right  .hover-cont::before,
+.refrence.right  .hover-cont::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border-top: 8px dashed transparent;
+    border-bottom: 8px dashed transparent;
+    border-right: 0;
+    left: 0px;
+    top: 50%;
+    margin-top:-8px;
+}
+
+.refrence.right  .hover-cont:before {
+    border-right: 8px solid #dcdcdc; 
+    margin-left: -8px;
+}
+
+.refrence.right  .hover-cont:after {
+    border-right: 8px solid #fff; 
+    margin-left: -7px; 
+}
+
+
+/* -------------------  动画--------------------------- */
+/*--------------- 供js类 -----------------*/
+/* 
+.refrence.top .hover-cont.show {
+    transform: translate(-50%, -100%) scale(1);
+}
+
+.refrence.bottom .hover-cont.show {
+    transform: translateX(-50%) scale(1);
+}
+
+.refrence.left .hover-cont.show {
+    transform: translate(-100%, -50%) scale(1);
+}
+
+.refrence.right .hover-cont.show {
+    transform: translate(100%, -50%) scale(1);
+}  
+*/
+
+
+/*---------------- 供css类-------------- */
+.refrence.top:hover .hover-cont {
+    transform: translate(-50%, -100%) scale(1);
+}
+
+.refrence.bottom:hover .hover-cont {
+    transform: translateX(-50%) scale(1);
+}
+
+.refrence.left:hover .hover-cont {
+    transform: translate(-100%, -50%) scale(1);
+}
+
+.refrence.right:hover .hover-cont {
+    transform: translate(100%, -50%) scale(1);
+}
+

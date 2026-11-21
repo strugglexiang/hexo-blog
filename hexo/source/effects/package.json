@@ -1,0 +1,15 @@
+{
+  "name": "page_effects",
+  "version": "1.0.0",
+  "description": "various effect of page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "strugglexiang",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.4.0"
+  }
+}

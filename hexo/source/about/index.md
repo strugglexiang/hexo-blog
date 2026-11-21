@@ -14,8 +14,8 @@ type: 'users'
 
 ## 我的时间
 除了工作，我的精力主要集中在以下内容       
-[自写文档](https://doc.strugglexiang.xyz)    
-[效果收集](http://effects.strugglexiang.xyz)     
+[自写文档](https://github.com/strugglexiang/docs)    
+[效果收集](/effects/)     
 
 
 ## 联系方式

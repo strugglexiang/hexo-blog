@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://strugglexiang.xyz/
+url: https://strugglexiang.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -100,7 +100,7 @@ theme: hexo-theme-next
 ## 勾子运行失败 https://blog.csdn.net/gsl9d1p04f6x2ts3c9/article/details/81024330
 deploy:
   type: git
-  repo: root@strugglexiang.xyz:/var/repo/blog.git
+  repo: https://github.com/strugglexiang/strugglexiang.github.io.git
   branch: master
 
 # 字数统计

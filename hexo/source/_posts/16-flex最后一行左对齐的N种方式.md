@@ -49,7 +49,7 @@ html代码
 ```
 
 结果如下图：  
-![问题点](https://source.strugglexiang.xyz/1565938865.jpg)
+![问题点](/images/1565938865.jpg)
 
 
 以下是**flex最后一行左对齐**的几种解决方案：
@@ -96,7 +96,7 @@ css
     <div class="box"></div>
 </div>
 ```
-[戳这里看演示](http://effects.strugglexiang.xyz/other/flex最后一行左对齐/列数固定并且子元素宽度固定-1.html)
+[戳这里看演示](/effects/code/other/flex最后一行左对齐/列数固定并且子元素宽度固定-1.html)
 
 
 ## 方法二
@@ -144,7 +144,7 @@ html
     <div class="box"></div>
 </div>
 ```
-[戳这里看演示](http://effects.strugglexiang.xyz/other/flex最后一行左对齐/列数固定并且子元素宽度固定-2.html)
+[戳这里看演示](/effects/code/other/flex最后一行左对齐/列数固定并且子元素宽度固定-2.html)
 
 
 
@@ -203,7 +203,7 @@ html
     <div class="box size1"></div>
 </div>
 ```
-[戳这里看演示](http://effects.strugglexiang.xyz/other/flex最后一行左对齐/列数不固定并且子元素宽度不固定-1.html)   
+[戳这里看演示](/effects/code/other/flex最后一行左对齐/列数不固定并且子元素宽度不固定-1.html)   
 
 **注意**：`box`的外边距为10，使得非最后一列的两个子元素间的最小间距是20。同时最后一列的元素间距只能为20。
 
@@ -261,7 +261,7 @@ html
 </div>
 ```
 
-[戳这里看演示](http://effects.strugglexiang.xyz/other/flex最后一行左对齐/列数不固定并且子元素宽度不固定-2.html)   
+[戳这里看演示](/effects/code/other/flex最后一行左对齐/列数不固定并且子元素宽度不固定-2.html)   
 **注意**：`box`的外边距为10，使得非最后一列的两个子元素间的最小间距是20。同时最后一列的元素间距只能为20。
 
 # 列数不固定并且子元素宽度固定
@@ -294,6 +294,6 @@ css
 }
 ```
 
-[戳这里看演示](http://effects.strugglexiang.xyz/other/flex最后一行左对齐/列数不固定并且子元素宽度固定.html)
+[戳这里看演示](/effects/code/other/flex最后一行左对齐/列数不固定并且子元素宽度固定.html)
 
 

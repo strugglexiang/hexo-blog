@@ -23,7 +23,7 @@ Node.js是基于Chorme V8引擎而构建的JavaScript运行时。
 
 Node.js的架构模式如下图：
 
-![node](https://source.strugglexiang.xyz/node.png)
+![node](/images/node.png)
 
 Chrome V8 引擎负责解释并执行JS代码。Libuv由事件循环和线程池组成，负责分发和执行i/o任务。
 

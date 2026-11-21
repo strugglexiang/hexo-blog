@@ -1,0 +1,47 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.box {
+    width: 1200px;
+    height: 500px;
+    margin: auto;
+    color: #fff;
+}
+.box:nth-child(1) {
+    margin: auto;
+    background: red;
+}
+
+.box:nth-child(2) {
+    margin: auto;
+    background: saddlebrown;
+}
+
+
+.box:nth-child(3) {
+    margin: auto;
+    background: olive;
+}
+
+
+.right-sidebar {
+    width: 80px;
+    height: 300px;
+    position: fixed;
+    right: 30px;
+    top: 1000px;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s;
+}
+
+.right-sidebar>div {
+    height: 100px;
+}
+
+.right-sidebar.center {
+    top: 50%;
+    transform: translateY(-50%);
+}

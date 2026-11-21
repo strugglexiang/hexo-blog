@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列数不固定并且子元素宽度固定</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        .container {
+            max-width: 800px;
+            max-height: 600px;
+            border: 1px solid #ddd;
+            overflow: auto;
+            resize: horizontal;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .box {
+            margin-top: 10px;
+            width: 180px;
+            height: 100px;
+            background: skyblue;
+        }
+        .fill_space {
+            width: 180px;
+        }
+        /* 空白标签 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+        <span class="fill_space"></span>
+    </div>
+</body>
+</html>

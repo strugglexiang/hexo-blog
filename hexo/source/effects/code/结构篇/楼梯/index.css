@@ -1,0 +1,57 @@
+* {
+    margin: 0; 
+    padding: 0;
+    border: none;
+}
+ul, li {
+    list-style: none;
+}
+
+#loutiNav {
+    width: 30px;   
+    position: fixed;
+    left: 40px;
+    top: 25%;
+    border: 1px solid black;
+}
+
+#loutiNav li {
+    width: 30px;
+    height: 29px;
+    border-bottom: 1px dashed white;
+    text-align: center;
+    line-height: 29px;
+    font-size: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+#loutiNav li span {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    left: 0;
+    top: 0;
+    background: darkred;
+}
+
+#loutiNav li:hover span{
+    display: block;
+    color: white;
+}
+
+#loutiNav li span.active {
+    display: block;
+    background: white;
+    color: darkred;
+}
+ 
+#head, #main div, #foot {
+    width: 1000px;
+    height: 600px;
+    text-align: center;
+    line-height: 600px;
+    font-size: 100px;
+    margin: 0 auto;
+} 

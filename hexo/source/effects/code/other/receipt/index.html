@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实时小票编辑</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./source.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="show">
+            <div class="preview_tran">
+                <span>预览</span>
+            </div>
+            <div class="content">
+                <div class="text">
+                </div>
+            </div>
+        </div>
+        <div class="edit">
+            <textarea class="textarea"></textarea>
+        </div>
+        <div class="dic">
+            <div class="dic_title"></div>
+            <div class="dic_content">
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <button class="bt" style='padding: 10px 20px'>预览</button>
+    </div>
+    <script>
+        // -------------------------- textarea模板
+        const textD = document.querySelector('.textarea')
+        textD.value = tempstr1
+        let textIndex = null // area插入点
+        textD.addEventListener('blur', function (event) {
+            textIndex = event.target.selectionEnd
+        })
+
+        // -------------------------- 字典数据填充
+        const dicParent = document.querySelector('.dic_content')
+        dic.forEach(item => {
+            var dom = document.createElement('p')
+            dom.innerText = item.name
+            dom.addEventListener('click', function () {
+                let value = `#{${item.name}}`
+                if (textIndex || textIndex === 0) {
+                    let pre = textD.value.substr(0, textIndex)
+                    let after = textD.value.substr(textIndex, textD.value.length)
+                    textD.value = `${pre}${value}${after}`
+                    textIndex += value.length
+                    return
+                }
+                textD.value += value
+            })
+            dom.classList.add('dic_item')
+            dicParent.appendChild(dom)
+        })
+
+        // ----------------------- 转义
+        const btE = document.querySelector('.bt')
+        const showE = document.querySelector('.content .text')
+        btE.addEventListener('click', function () {
+            // console.log(escapeTemp(dic, textD.value))
+            showE.innerHTML = escapeTemp(dic, textD.value)
+        })
+
+        //-------------------------- 
+        document.addEventListener('DOMContentLoaded', function () {
+            btE.click()
+        })
+
+    </script>
+</body>
+
+</html>

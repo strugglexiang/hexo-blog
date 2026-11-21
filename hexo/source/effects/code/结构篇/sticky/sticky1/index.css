@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.something {
+    
+}
+
+.sticky-wrap {
+    height: 70px;
+}
+
+.sticky-container {
+    height: 70px;
+    line-height: 70px;
+    background: black;
+    color: #fff;
+    text-align: center;
+}
+
+.active {
+    position: fixed;
+    height: 70px;
+    line-height: 70px;    
+    left: 0px;
+    top: 0px;
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>进度条5</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            .loading {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                background-color: #fff;
+            }
+            .loading .pic {
+                width:100px;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                font-size: 25px;
+                text-align: center;
+                line-height: 100px;
+            }
+            .loading .pic span {
+                display: block;
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                /* background: #066; */
+                border-radius: 50%;
+                box-shadow: 0 3px 0 #666;
+                -webkit-animation: rotate 1s infinite linear;
+                animation: rotate 1s infinite linear;
+            }
+            @-webkit-keyframes rotate {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loading">
+            <div class="pic">
+                <!--外面的圈圈-->
+                <span></span>
+                <!--数据加载进度（百分比数字）-->
+                <b>0%</b>
+            </div>
+        </div>
+
+        <img src="http://f.hiphotos.baidu.com/zhidao/pic/item/8b82b9014a90f60326b707453b12b31bb051eda9.jpg">
+        <img src="http://pic5.qiyipic.com/common/20130524/7dc5679567cd4243a0a41e5bf626ad77.jpg?src=focustat_4_20130527_7">
+        <img src="http://b.hiphotos.baidu.com/zhidao/pic/item/908fa0ec08fa513d2fd87b813b6d55fbb2fbd97a.jpg">
+        <img src="http://h.hiphotos.baidu.com/zhidao/pic/item/14ce36d3d539b60075f33ca9ef50352ac65cb7ea.jpg">
+        <img src="http://scimg.jb51.net/allimg/151109/14-151109164045494.jpg">
+        <img src="http://2t.5068.com/uploads/allimg/151024/48-151024111511-50.jpg">
+        <img src="http://f.hiphotos.baidu.com/zhidao/pic/item/8b82b9014a90f60326b707453b12b31bb051eda9.jpg">
+        <img src="http://pic5.qiyipic.com/common/20130524/7dc5679567cd4243a0a41e5bf626ad77.jpg?src=focustat_4_20130527_7">
+        <img src="http://b.hiphotos.baidu.com/zhidao/pic/item/908fa0ec08fa513d2fd87b813b6d55fbb2fbd97a.jpg">
+        <img src="http://h.hiphotos.baidu.com/zhidao/pic/item/14ce36d3d539b60075f33ca9ef50352ac65cb7ea.jpg">
+        <img src="http://scimg.jb51.net/allimg/151109/14-151109164045494.jpg">
+        <img src="http://2t.5068.com/uploads/allimg/151024/48-151024111511-50.jpg">
+
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+        <script>
+            $(function(){
+                var img = $("img")
+                var num = 0
+    
+                img.each(function(i){     
+                    var oImg = new Image()
+                    oImg.onload = function(){
+                        /*清掉重复请求*/
+                        oImg.onload = null
+
+                        num ++
+                        var load = parseInt(num/$("img").size()*100)+"%"
+                        $(".loading b").html(load)
+                        if(num >= i){
+                            $(".loading").fadeOut()
+                        }
+                    }
+
+                    oImg.src = img[i].src
+                })
+            })
+        </script>
+    </body>
+</html>

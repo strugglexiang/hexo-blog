@@ -1,0 +1,32 @@
+html,body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 运动曲线 */
+/* 波浪线 */
+@keyframes waveMove {
+    from { background-position: 0 100%; }
+    to   { background-position: -20px 100%; }
+}
+/*  */
+a {
+    color: inherit;
+    text-decoration: underline;
+    color:#e74c3c;
+    font-size: 16px;
+}
+
+a:hover {   
+    text-decoration: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='%23e74c3c' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E") repeat-x 0 100%; 
+    background-size: 20px auto; 
+    animation: waveMove 1s infinite linear;
+}
+
+
+ul,li {
+    list-style: none;
+}
+
+

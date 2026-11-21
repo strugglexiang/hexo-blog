@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1-利用scroll</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        /* 水平 */
+        .horizontal {
+            width: 1000px;
+            border: 1px solid #ddd;
+            margin: 20px auto 0px;
+            overflow: hidden;
+        }
+        .horizontal_wrap, .horizontal_origin, .horizontal_repeat {
+            display: flex;
+            flex-direction: row;
+        }
+        .horizontal_content_box {
+            text-align: center;
+            width: 250px;
+        }
+        .horizontal_content_box p {
+            padding: 10px;
+            font-size: 16px;
+        }
+        /* 垂直 */
+        .vertical {
+            width: 500px;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            margin: 20px auto 0px;
+        }
+        .vertical_wrap {}
+        .vertical_origin p, .vartical_repeat p {
+            text-align: center;
+            padding: 10px 0px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 水平 -->
+    <div class="container horizontal">
+        <div class="horizontal_wrap">
+            <div class="horizontal_origin">
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+                <div class="horizontal_content_box">
+                    <img src="/images/huaji.jpg" alt="">
+                    <p>图片</p>
+                </div>
+            </div>
+            <div class="horizontal_repeat"></div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            var container = document.querySelector('.horizontal')
+            var horizontal_origin = document.querySelector('.horizontal_origin')
+            var horizontal_repeat = document.querySelector('.horizontal_repeat')
+
+            var speed = 16
+
+            horizontal_repeat.innerHTML = horizontal_origin.innerHTML
+
+            function marquee() {
+                container.scrollLeft++
+                if(container.scrollLeft > horizontal_origin.offsetWidth) {
+                    container.scrollLeft = 0
+                }
+            }
+            var timer = setInterval(marquee, speed)
+            container.addEventListener('mouseenter', function(e) {
+                clearInterval(timer)
+            })
+            container.addEventListener('mouseleave', function(e) {
+                timer = setInterval(marquee, speed)
+            })
+        })()
+    </script>
+
+    <!-- 垂直 -->
+    <div class="vertical">
+        <div class="vertical_wrap">
+            <div class="vertical_origin">
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+                <p>这是一段文字</p>
+            </div>
+            <div class="vartical_repeat"></div>
+        </div>
+    </div>    
+    <script>
+        (function() {
+            var container = document.querySelector('.vertical')
+            var vertical_origin = document.querySelector('.vertical_origin')
+            var vartical_repeat = document.querySelector('.vartical_repeat')
+
+            var speed = 16
+
+            vartical_repeat.innerHTML = vertical_origin.innerHTML
+
+            function marquee() {
+                container.scrollTop++
+                if(container.scrollTop > vertical_origin.offsetHeight) {
+                    container.scrollTop = 0
+                }
+            }
+            var timer = setInterval(marquee, speed)
+            container.addEventListener('mouseenter', function(e) {
+                clearInterval(timer)
+            })
+            container.addEventListener('mouseleave', function(e) {
+                timer = setInterval(marquee, speed)
+            })            
+        })()
+    </script>
+</body>
+</html>

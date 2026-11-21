@@ -1,12 +1,17 @@
 # 介绍
-本仓库用于书写、收集各种页面效果和技巧。
+收集各种页面效果和技巧的静态示例。
+
+**本目录 `hexo-blog/hexo/source/effects/` 已经是唯一来源**，随博客一起发布在
+https://strugglexiang.github.io/effects/ 。
+原来的独立仓库 `strugglexiang/page_effects` 已停止维护，仅作历史归档；
+新增或修改示例请直接在本目录操作，然后运行 `hexo/deploy.cmd`。
 
 
 # 内容
 **结构篇**    
-[sticky](http://effects.strugglexiang.xyz/%E7%BB%93%E6%9E%84%E7%AF%87/sticky/sticky.html)   
-[楼梯](http://effects.strugglexiang.xyz/%E7%BB%93%E6%9E%84%E7%AF%87/%E6%A5%BC%E6%A2%AF/index.html)   
-[响应式demo1](http://effects.strugglexiang.xyz/%E7%BB%93%E6%9E%84%E7%AF%87/%E5%93%8D%E5%BA%94%E5%BC%8F/demo1/index.html)   
+[sticky](./code/结构篇/sticky/sticky.html)   
+[楼梯](./code/结构篇/楼梯/index.html)   
+[响应式demo1](./code/结构篇/响应式/demo1/index.html)   
 
 * * *
 **交互篇**
